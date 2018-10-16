@@ -13,9 +13,12 @@ def login():
     if request.method=='GET':
         return render_template('login.html')
     if request.method=='POST':
-        usuario = request.form['usuario']
-        contra = request.form['contra']
-        return 'Hola ' + usuario + ', tu contraseña es: ' + contra
+        return render_template('index.html')
+
+@app.route('/register', methods=['GET','POST'])
+def register():
+    if request.method=='GET':
+        return render_template('register.html')
 
 if __name__ == '__main__':
     app.run()
