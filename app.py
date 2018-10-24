@@ -31,11 +31,11 @@ def logout():
 def forgot():
     if request.method=='GET':
        return render_template('forgot-password.html')
-    #if request.method=='POST':
+    if request.method=='POST':
     #traer info ingresada
-    #    usuario= request.form['usuario']
-    #    contra = request.form['contra']
-    #    return render_template('forgot-password.html', usuario=usuario)
+        usuario= request.form['usuario']
+        contra = request.form['contra']
+        return render_template('forgot-password.html', usuario=usuario)
 
 if __name__ == '__main__':
     app.run()

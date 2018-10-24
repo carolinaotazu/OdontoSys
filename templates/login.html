@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Login</title>
+    <title>SB Admin - Acceso</title>
 
     <!-- Bootstrap core CSS-->
     <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 
     <div class="container">
       <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login</div>
+        <div class="card-header">Acceso</div>
         <div class="card-body">
           <form action="/login" method="post">
             <div class="form-group">
@@ -35,29 +35,29 @@
                        id="inputEmail"
                        class="form-control"
                        placeholder="Nombre de usuario" required="required" autofocus="autofocus" name="usuario">
-                <label for="inputEmail">Email address</label>
+                <label for="inputEmail">USUARIO</label>
               </div>
             </div>
             <div class="form-group">
               <div class="form-label-group">
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required" name="contra">
-                <label for="inputPassword">Password</label>
+                <label for="inputPassword">CONTRASEÑA</label>
               </div>
             </div>
             <div class="form-group">
               <div class="checkbox">
                 <label>
                   <input type="checkbox" value="remember-me">
-                  Remember Password
+                  Recordar Contraseña
                 </label>
               </div>
             </div>
-              <input type="submit" class="btn btn-danger btn-block" value="Iniciar sesión"/>
-            <a class="btn btn-block" href="index.html">Ir a inicio</a>
+              <input type="submit" class="btn btn-primary btn-block" value="Iniciar sesión"/>
+            <a class="btn btn-block" href="/index">Ir a inicio</a>
           </form>
           <div class="text-center">
-            <a class="d-block small mt-3" href="register.html">Register an Account</a>
-            <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+            <a class="d-block small mt-3" href="/register">Registrar nuevo Usuario</a>
+            <a class="d-block small" href="/forgot-password">Olvidó su contraseña?</a>
           </div>
         </div>
       </div>
