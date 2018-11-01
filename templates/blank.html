@@ -139,10 +139,14 @@
           </ol>
 
           <!-- Page Content -->
-          <h1>Bienvenido {{ usuario }}!</h1>
+          <h1>Bienvenido {{ usuario.t_tipo_usuario.denominacion }} {{ usuario.nombres }} {{ usuario.apellidos }}!</h1>
           <hr>
           <p>Acabás de iniciar sesion en OdontoSys</p>
-
+            <hr>
+            <p>Tipos de Usuarios disponibles: </p>
+            {% for t in tipos %}
+                <h3>{{ t.id_tipo }} - {{ t.denominacion }}</h3>
+            {% endfor %}
         </div>
         <!-- /.container-fluid -->
 

@@ -28,18 +28,18 @@
       <div class="card card-register mx-auto mt-5">
         <div class="card-header">Registrar un Usuario</div>
         <div class="card-body">
-          <form>
+          <form action="/register" method="post">
             <div class="form-group">
               <div class="form-row">
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="text" id="firstName" class="form-control" placeholder="Nombre" required="required" autofocus="autofocus">
+                    <input type="text" name="nombres" id="firstName" class="form-control" placeholder="Nombre" required="required" autofocus="autofocus">
                     <label for="firstName">Nombre</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="text" id="lastName" class="form-control" placeholder="Apellido" required="required">
+                    <input type="text" name="apellidos" id="lastName" class="form-control" placeholder="Apellido" required="required">
                     <label for="lastName">Apellido</label>
                   </div>
                 </div>
@@ -47,27 +47,36 @@
             </div>
             <div class="form-group">
               <div class="form-label-group">
-                <input type="text" id="inputEmail" class="form-control" placeholder="Usuario" required="required">
-                <label for="inputEmail">Usuario</label>
+                <input type="text" name="username" id="inputUsuario" class="form-control" placeholder="Usuario" required="required">
+                <label for="inputUsuario">Usuario</label>
               </div>
             </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                    <select name="tipo_usuario_id" class="form-control">
+                        {% for t in tipos %}
+                            <option value="{{ t.id_tipo }}">{{ t.denominacion }}</option>
+                        {% endfor %}
+                    </select>
+              </div>
+              </div>
             <div class="form-group">
               <div class="form-row">
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="required">
+                    <input type="password" name="contra" id="inputPassword" class="form-control" placeholder="Contraseña" required="required">
                     <label for="inputPassword">Contraseña</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirmar contraseña" required="required">
+                    <input type="password" name="recontra" id="confirmPassword" class="form-control" placeholder="Confirmar contraseña" required="required">
                     <label for="confirmPassword">Confirmar contraseña</label>
                   </div>
                 </div>
               </div>
             </div>
-            <a class="btn btn-primary btn-block" href="/login">Registrar</a>
+            <input class="btn btn-primary btn-block" value="Registrar" type="submit"/>
           </form>
           <div class="text-center">
             <a class="d-block small mt-3" href="/login">Página de acceso</a>
